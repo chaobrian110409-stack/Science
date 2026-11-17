@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>基礎化學・段考互動講義</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#09090B;--bg2:#121316;--tx:#FAFAFA;--mu:#A1A1AA;--bd:rgba(255,255,255,.08);--ac:#8B9CFF;--ac2:#5EEAD4;--wm:#FDA4AF;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:72px;background:var(--bg)}
+body{margin:0;background:radial-gradient(ellipse 80% 420px at 50% 0,rgba(139,156,255,.18),transparent 70%) no-repeat,var(--bg);color:var(--mu);font:400 16px/1.75 Inter,"Noto Sans TC",sans-serif}
+h1,h2,h3{color:var(--tx);letter-spacing:-.03em;margin:0;line-height:1.2}
+h1{font-size:clamp(34px,7vw,64px);font-weight:900}h2{font-size:clamp(26px,4vw,38px);font-weight:800}h3{font-size:18px;font-weight:700;margin-bottom:8px}
+nav{position:sticky;top:0;z-index:9;display:flex;gap:4px;overflow-x:auto;padding:10px 16px;background:rgba(9,9,11,.7);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);scrollbar-width:none}
+nav a{color:var(--mu);text-decoration:none;font-size:14px;padding:6px 12px;border-radius:99px;white-space:nowrap;transition:all .3s ease-out}
+nav a:hover{color:var(--tx);background:rgba(255,255,255,.08)}
+nav button{margin-left:auto}
+section,header{max-width:1080px;margin:0 auto;padding:96px 20px 0}
+header{padding-top:96px;text-align:center}header p{max-width:560px;margin:20px auto 0}
+.sub{max-width:620px;margin:10px 0 32px}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.c2{grid-column:span 2}.c3{grid-column:span 3}.c4{grid-column:span 4}.c6{grid-column:span 6}
+@media(max-width:760px){.grid>*{grid-column:span 6}section{padding-top:72px}}
+.card{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);border:1px solid var(--bd);border-radius:16px;padding:24px;transition:all .3s ease-out}
+.card:hover{transform:translateY(-3px);border-color:rgba(139,156,255,.35);box-shadow:0 0 32px rgba(139,156,255,.12)}
+button,.chip{font:inherit;color:var(--tx);background:rgba(255,255,255,.06);border:1px solid var(--bd);border-radius:10px;padding:8px 14px;cursor:pointer;transition:all .3s ease-out}
+button:hover{background:rgba(255,255,255,.12);transform:translateY(-2px);box-shadow:0 0 20px rgba(139,156,255,.2)}
+button.on{background:rgba(139,156,255,.2);border-color:var(--ac)}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+b,.hl{color:var(--tx);font-weight:700}.a{color:var(--ac2)}.w{color:var(--wm)}
+.tip{display:none;margin-top:14px;padding:10px 14px;border-left:2px solid var(--ac2);background:rgba(94,234,212,.06);border-radius:0 10px 10px 0;font-size:14px}
+body.teach .tip{display:block}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--bd);padding:8px;text-align:left}th{color:var(--tx)}
+svg{max-width:100%;height:auto}
+.pt{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.pt button{padding:6px 0;text-align:center;font-size:13px;line-height:1.3}.pt i{display:block;font-style:normal;font-size:10px;color:var(--mu)}
+input[type=range]{width:100%;accent-color:var(--ac)}
+.ok{border-color:var(--ac2)!important;background:rgba(94,234,212,.12)!important}.no{border-color:var(--wm)!important;background:rgba(253,164,175,.12)!important}
+footer{text-align:center;padding:96px 20px;font-size:13px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style></head><body>
+<nav><a href="#s1">物質</a><a href="#s2">原子結構</a><a href="#s3">電子與週期表</a><a href="#s4">同位素</a><a href="#s5">水的性質</a><a href="#s6">三相圖</a><a href="#s7">淨化</a><a href="#s8">軟化</a><a href="#s9">小測驗</a><button id="tg" aria-pressed="false">教學提示</button></nav>
+
+<header><h1>從物質到水<br>基礎化學一次看懂</h1><p>依講義 P.8–P.89 重點整理：點一點、拉一拉，用互動圖示理解段考範圍。右上角開啟「教學提示」可看到帶學生的小撇步。</p></header>
+
+<section id="s1"><h2>物質的分類與變化</h2><p class="sub">先分清楚「是什麼」，再分清楚「變成什麼」。</p>
+<div class="grid"><div class="card c3"><h3>物質分類</h3>
+<svg viewBox="0 0 320 170" width="100%" fill="none" stroke="#A1A1AA" stroke-width="1.2"><g font-size="13" fill="#FAFAFA" stroke="none" text-anchor="middle"><text x="160" y="18">物質</text><text x="80" y="68">純物質</text><text x="240" y="68">混合物</text><text x="40" y="128">元素</text><text x="120" y="128">化合物</text><text x="200" y="128">均勻混合</text><text x="280" y="128">不均勻</text></g><path d="M160 24L80 54M160 24L240 54M80 74L40 114M80 74L120 114M240 74L200 114M240 74L280 114"/><g font-size="11" fill="#A1A1AA" stroke="none" text-anchor="middle"><text x="40" y="148">Na、O₂</text><text x="120" y="148">H₂O、NaCl</text><text x="200" y="148">糖水</text><text x="280" y="148">泥水</text></g></svg>
+<p>純物質有固定組成與性質；混合物可用物理方法分離。</p></div>
+<div class="card c3"><h3>點點看：物理還是化學變化？</h3><p style="margin:0">先選答案，再點例子。</p><div class="row"><button id="mP">物理變化</button><button id="mC" class="on">化學變化</button></div><div class="row" id="ex"></div><p id="exr" class="hl"></p>
+<div class="tip">判斷口訣：有沒有產生新物質？以服飾科常見的「布料剪裁」(物理)和「漂白」(化學)當例子最有感。</div></div></div></section>
+
+<section id="s2"><h2>原子結構的演變</h2><p class="sub">每位科學家都補上一塊拼圖。點選看發現。</p>
+<div class="grid"><div class="card c4"><div class="row" id="tl"></div><h3 id="tlt"></h3><p id="tld"></p>
+<div class="tip">用「葡萄乾布丁 → 太陽系」的畫面串起四個模型，學生比較好記。</div></div>
+<div class="card c2"><h3>三種粒子</h3><table><tr><th>粒子</th><th>電荷</th><th>位置</th></tr><tr><td>質子 p</td><td>+1</td><td>原子核</td></tr><tr><td>中子 n</td><td>0</td><td>原子核</td></tr><tr><td>電子 e</td><td>−1</td><td>核外</td></tr></table><p style="margin-top:14px"><b>質量數 A = Z + N</b><br>Z 質子數 (＝原子序)，N 中子數。電中性時：電子數＝質子數。</p></div></div></section>
+
+<section id="s3"><h2>電子排列與週期表</h2><p class="sub">點選前 18 號元素，看電子怎麼排、它在週期表哪一格。</p>
+<div class="grid"><div class="card c4"><div class="pt" id="pt"></div></div>
+<div class="card c2" style="text-align:center"><svg id="at" viewBox="-100 -100 200 200" width="190"></svg><h3 id="ati"></h3><p id="atd" style="margin:0"></p></div>
+<div class="card c6"><b>規則：</b>K 層最多 2、L 層最多 8、M 層（前 18 號）最多 8；先填內層再填外層。<b>週期＝電子層數</b>，<b>族＝最外層（價）電子數</b>。1A 鹼金屬、2A 鹼土金屬、7A 鹵素、8A 惰性氣體。<div class="tip">請學生先猜電子排列再點選驗證；Na (2,8,1) 與 Cl (2,8,7) 是講義例題。</div></div></div></section>
+
+<section id="s4"><h2>同位素與同素異形體</h2><p class="sub">兩個名字很像，差在哪裡？</p>
+<div class="grid"><div class="card c3"><h3>同位素</h3><p><b>質子數相同、中子數不同</b>（質量數不同），化學性質相似。<br>例：氫 ¹H、²H、³H。</p></div><div class="card c3"><h3>同素異形體</h3><p><b>同種元素、結構不同</b>的單質，性質不同。<br>例：碳的鑽石與石墨；氧氣 O₂ 與臭氧 O₃。</p><div class="tip">鑽石就是飾品！把「同一元素、不同排列」連到首飾，學生很容易記得。</div></div></div></section>
+
+<section id="s5"><h2>水的性質</h2><p class="sub">人體約 70% 是水、地球表面約 70% 被海洋覆蓋，可利用淡水只占約 1%。</p>
+<div class="grid"><div class="card c4"><h3>拖曳溫度：水的密度</h3><input type="range" id="tr" min="0" max="10" step=".5" value="4" aria-label="溫度"><svg viewBox="0 0 320 150" width="100%"><path id="cv" d="" fill="none" stroke="#8B9CFF" stroke-width="2.5"/><line x1="20" y1="130" x2="310" y2="130" stroke="#52525B"/><circle id="dt" r="6" fill="#5EEAD4"/><text x="20" y="147" fill="#A1A1AA" font-size="11">0°C</text><text x="290" y="147" fill="#A1A1AA" font-size="11">10°C</text></svg><p id="trt" class="hl"></p>
+<div class="tip">所以湖面結冰時，底層仍有 4°C 的水，魚才能過冬。</div></div>
+<div class="card c2"><h3>水的物理性質</h3><p>1 atm 下沸點 100°C、凝固點 0°C；壓力加大沸點上升；4°C 密度最大 (1 g/cm³)。汽化熱與比熱都大，所以水能調節氣溫。</p></div>
+<div class="card c6"><h3>水的化學性質：點卡片看反應</h3><div class="row" id="rx"></div><p id="rxt" class="hl" style="font-size:18px"></p></div></div></section>
+
+<section id="s6"><h2>CO₂ 三相圖</h2><p class="sub">點圖上的點，看固、液、氣在什麼條件下共存。</p>
+<div class="grid"><div class="card c4"><svg viewBox="0 0 320 240" width="100%" font-size="12"><g fill="none" stroke="#A1A1AA"><path d="M30 10V210H310"/><path d="M50 200Q90 190 120 140" stroke="#8B9CFF" stroke-width="2"/><path d="M120 140L135 40" stroke="#8B9CFF" stroke-width="2"/><path d="M120 140Q200 120 280 30" stroke="#8B9CFF" stroke-width="2"/><path d="M30 180H120M90 180V210M120 140V210M280 30V210" stroke-dasharray="3 4" stroke-opacity=".5"/></g><g fill="#FAFAFA"><text x="60" y="100">固體</text><text x="180" y="70">液體</text><text x="200" y="170">氣體</text></g><g fill="#A1A1AA"><text x="2" y="184">1.0</text><text x="2" y="144">5.2</text><text x="2" y="34">73</text><text x="78" y="226">−78</text><text x="108" y="226">−57</text><text x="272" y="226">31</text><text x="2" y="14">壓力 atm</text><text x="270" y="206">溫度 °C</text></g><g id="pp" style="cursor:pointer" fill="#5EEAD4"></g></svg></div>
+<div class="card c2"><h3 id="ppt">點選一個點</h3><p id="ppd">三相點 A、臨界點 C、昇華點 Z。</p></div></div></section>
+
+<section id="s7"><h2>水的淨化</h2><p class="sub">自然水（湖水、河水、地下水）要經過五步才適合飲用。點選步驟。</p>
+<div class="grid"><div class="card c4"><div class="row" id="pu"></div><div id="sw" style="height:70px;border-radius:12px;transition:all .6s;margin:8px 0"></div><h3 id="put"></h3><p id="pud"></p></div>
+<div class="card c2"><h3>注意安全</h3><p>漂白水 (NaClO) 遇鹽酸 (HCl)：<br><b class="w">NaClO + 2HCl → NaCl + H₂O + Cl₂↑</b><br>會產生有毒的氯氣，絕不可混用。</p><div class="tip">洗衣、打掃的實用安全知識，學生會記很久。</div></div></div></section>
+
+<section id="s8"><h2>水的軟化</h2><p class="sub">硬水含較多 Ca²⁺、Mg²⁺，洗衣服時泡沫少、也易結水垢。</p>
+<div class="grid"><div class="card c3"><div class="row"><button id="hT" class="on">暫時硬水</button><button id="hP">永久硬水</button></div><p id="ht"></p></div>
+<div class="card c3"><h3>離子交換法</h3><p>樹脂把水中陽離子換成 H⁺、陰離子換成 OH⁻，H⁺ 與 OH⁻ 結合成 H₂O。</p><h3 style="margin-top:14px">石灰蘇打法</h3><p style="margin:0">加入石灰與蘇打，使 Ca²⁺、Mg²⁺ 沉澱。</p></div>
+<div class="card c6"><h3>逆滲透：拖曳外加壓力</h3><input type="range" id="pr" min="0" max="100" value="30" aria-label="壓力"><svg viewBox="0 0 320 110" width="100%"><rect x="40" y="20" width="110" height="70" fill="none" stroke="#52525B"/><rect x="170" y="20" width="110" height="70" fill="none" stroke="#52525B"/><rect id="lw" x="40" width="110" fill="#8B9CFF" opacity=".45"/><rect id="rw" x="170" width="110" fill="#5EEAD4" opacity=".45"/><path d="M160 15V95" stroke="#FDA4AF" stroke-dasharray="4 3"/><text x="70" y="108" fill="#A1A1AA" font-size="11">海水＋加壓</text><text x="200" y="108" fill="#A1A1AA" font-size="11">純水側</text></svg><p id="prt" class="hl"></p><div class="tip">滲透壓約為圖中 50 的位置，外加壓力要超過它，水才會由濃的一側被「擠」過半透膜。用於海水淡化、工業廢水回收。</div></div></div></section>
+
+<section id="s9"><h2>小測驗</h2><p class="sub">按「看答案」，自己先想再核對。</p>
+<div class="card" style="max-width:640px"><h3 id="q"></h3><p id="an" class="a" style="min-height:30px;margin:0"></p><div class="row"><button id="sh">看答案</button><button id="nx">下一題</button></div></div></section>
+<footer>內容依家教講義整理，以課本與老師講解為準。</footer>
+
+<script>
+const $=s=>document.querySelector(s);
+$('#tg').onclick=e=>{const o=document.body.classList.toggle('teach');e.target.setAttribute('aria-pressed',o);e.target.classList.toggle('on',o)};
+// 物質
+const EX=[['冰融化成水',0],['鐵生鏽',1],['蠟燭燃燒',1],['糖溶於水',0],['剪裁布料',0],['漂白衣服',1],['牛奶變酸',1],['水結冰',0]];let pick=1;
+$('#mP').onclick=()=>{pick=0;$('#mP').classList.add('on');$('#mC').classList.remove('on')};
+$('#mC').onclick=()=>{pick=1;$('#mC').classList.add('on');$('#mP').classList.remove('on')};
+EX.forEach(([t,a])=>{const b=document.createElement('button');b.textContent=t;b.onclick=()=>{const r=pick==a;b.className=r?'ok':'no';$('#exr').textContent=r?'答對了！'+t+'是'+(a?'化學':'物理')+'變化':'再想想：有產生新物質嗎？'};$('#ex').append(b)});
+// 原子模型
+const TL=[['道耳吞','原子是不可再分的實心小球。'],['湯姆森','陰極射線實驗發現電子，提出葡萄乾布丁模型：帶正電球體中嵌著電子。'],['拉塞福','α 粒子散射實驗：大多直線穿過、少數偏折，發現帶正電的原子核，原子內大部分是空的。'],['查兌克','發現中子，說明原子核由質子和中子組成。']];
+TL.forEach((x,i)=>{const b=document.createElement('button');b.textContent=x[0];b.onclick=()=>{[...$('#tl').children].forEach(c=>c.classList.remove('on'));b.classList.add('on');$('#tlt').textContent=x[0];$('#tld').textContent=x[1]};$('#tl').append(b);if(!i)b.click()});
+// 元素
+const E='H 氫 1,He 氦 4,Li 鋰 7,Be 鈹 9,B 硼 11,C 碳 12,N 氮 14,O 氧 16,F 氟 19,Ne 氖 20,Na 鈉 23,Mg 鎂 24,Al 鋁 27,Si 矽 28,P 磷 31,S 硫 32,Cl 氯 35,Ar 氬 40'.split(',').map(s=>s.split(' '));
+const G={1:'1A（鹼金屬）',2:'2A（鹼土金屬）',7:'7A（鹵素）',8:'8A（惰性氣體）'};
+function cfg(z){const c=[];[2,8,8].forEach(m=>{const k=Math.min(m,z);if(k>0)c.push(k);z-=k});return c}
+function show(i){const z=i+1,c=cfg(z),[s,n,m]=E[i];let h='<circle r="18" fill="#8B9CFF" opacity=".8"/><text y="5" text-anchor="middle" fill="#09090B" font-size="13" font-weight="700">'+z+'+</text>';
+c.forEach((k,j)=>{const r=38+j*24;h+='<circle r="'+r+'" fill="none" stroke="#52525B" stroke-dasharray="3 3"/>';for(let e=0;e<k;e++){const a=2*Math.PI*e/k-1.57;h+='<circle cx="'+(r*Math.cos(a)).toFixed(1)+'" cy="'+(r*Math.sin(a)).toFixed(1)+'" r="5" fill="#5EEAD4"/>'}});
+$('#at').innerHTML=h;const g=z==2?8:c[c.length-1];
+$('#ati').textContent=n+' '+s+'　('+c.join(',')+')';
+$('#atd').innerHTML='質子 '+z+'・電子 '+z+'・中子 '+(+m-z)+'<br>質量數 '+m+'・第 '+c.length+' 週期・'+(G[g]||g+'A 族');
+[...$('#pt').children].forEach((b,k)=>b.classList.toggle('on',k==i))}
+const pos=[];for(let i=0;i<18;i++){if(i==0)pos.push(0,'x','x','x','x','x','x');else if(i==1)pos.push(1);else pos.push(i)}
+pos.forEach(p=>{if(p==='x'){$('#pt').append(document.createElement('span'));return}const b=document.createElement('button');b.innerHTML=E[p][0]+'<i>'+(p+1)+'</i>';b.onclick=()=>show(p);$('#pt').append(b)});
+show(10);
+// 密度
+function pth(){let d='';for(let t=0;t<=10;t+=.5){const x=20+t*29,y=120-(95-Math.pow(t-4,2)*(t<4?2.2:1.2));d+=(t?'L':'M')+x+' '+y}$('#cv').setAttribute('d',d)}pth();
+$('#tr').oninput=function(){const t=+this.value,x=20+t*29,y=120-(95-Math.pow(t-4,2)*(t<4?2.2:1.2));$('#dt').setAttribute('cx',x);$('#dt').setAttribute('cy',y);$('#trt').textContent=t+'°C：'+(t==4?'密度最大，約 1 g/cm³':t<4?'0→4°C 升溫，水反而收縮、密度變大':'高於 4°C 後，升溫膨脹、密度變小')};$('#tr').oninput();
+// 反應
+const RX=[['水＋活性金屬','2Na + 2H₂O → 2NaOH + H₂↑（氫氧化物＋氫氣）'],['水＋金屬氧化物','Na₂O + H₂O → 2NaOH（生成鹼性物質）'],['水＋非金屬氧化物','CO₂ + H₂O → H₂CO₃（生成酸性物質）']];
+RX.forEach(([a,b])=>{const e=document.createElement('button');e.textContent=a;e.onclick=()=>{[...$('#rx').children].forEach(c=>c.classList.remove('on'));e.classList.add('on');$('#rxt').textContent=b};$('#rx').append(e)});
+// 三相圖
+const PP=[['Z',90,180,'昇華點','−78°C、1 atm。三相點壓力 5.2 atm 高於 1 atm，所以乾冰在常壓下加熱不經液態，直接變氣體，稱為昇華。'],['A',120,140,'三相點','−57°C、5.2 atm：固、液、氣三相共存。'],['C',280,30,'臨界點','31°C、73 atm：超過此點氣液無法區分。'],['B',135,40,'AB 線','固液平衡線，斜率為正（升壓熔點升高），與水不同。']];
+PP.forEach(([n,x,y,t,d])=>{const g=document.createElementNS('http://www.w3.org/2000/svg','g');g.innerHTML='<circle cx="'+x+'" cy="'+y+'" r="9"/><text x="'+(x+12)+'" y="'+(y-8)+'" fill="#FAFAFA">'+n+'</text>';g.onclick=()=>{$('#ppt').textContent=n+'：'+t;$('#ppd').textContent=d};$('#pp').append(g)});
+// 淨化
+const PU=[['沉澱','大顆粒泥沙沉降，小微粒仍懸浮。',.9],['凝聚','加入明礬 KAl(SO₄)₂·12H₂O，形成膠狀物質，包裹懸浮微粒一起沉下。',.65],['過濾（除臭）','砂層濾掉固體微粒，活性碳吸附色素與異味。',.3],['曝氣','讓水濺起水花，增加與空氣的接觸面積，溶氧量增加，微生物把有機物分解成二氧化碳和水。',.15],['消毒','加氯氣或臭氧殺菌。氯殘留較久、臭氧殺菌強但易分解，無法防止再次污染。',0]];
+PU.forEach(([t,d,o],i)=>{const b=document.createElement('button');b.textContent=t;b.onclick=()=>{[...$('#pu').children].forEach(c=>c.classList.remove('on'));b.classList.add('on');$('#put').textContent=t;$('#pud').textContent=d;$('#sw').style.cssText='height:70px;border-radius:12px;margin:8px 0;transition:all .6s;background:rgba(160,120,70,'+o+');box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);'+(o==0?'background:rgba(139,200,255,.25)':'')};$('#pu').append(b);if(!i)b.click()});
+// 硬水
+const H={T:'含 Ca(HCO₃)₂、Mg(HCO₃)₂。煮沸即可軟化：Ca(HCO₃)₂ → CaCO₃↓ + H₂O + CO₂↑。',P:'含 CaSO₄、MgSO₄、CaCl₂ 等。煮沸無法去除，需用離子交換法或石灰蘇打法。'};
+function hs(k){$('#ht').textContent=H[k];$('#hT').classList.toggle('on',k=='T');$('#hP').classList.toggle('on',k=='P')}$('#hT').onclick=()=>hs('T');$('#hP').onclick=()=>hs('P');hs('T');
+// 逆滲透
+$('#pr').oninput=function(){const p=+this.value,d=(p-50)/50*14;const l=45-d,r=45+d;$('#lw').setAttribute('y',l+20);$('#lw').setAttribute('height',70-l);$('#rw').setAttribute('y',r+20);$('#rw').setAttribute('height',70-r);$('#prt').textContent=p<=50?'壓力小於滲透壓：水自然流向濃的海水側，無法取得淡水':'壓力大於滲透壓：水被擠過半透膜，純水側增加，可得淡水！'};$('#pr').oninput();
+// 測驗
+const Q=[['質量數 A 等於什麼？','質子數 + 中子數 (A = Z + N)'],['Na 的電子排列？','(2,8,1)，第 3 週期、1A 族'],['同位素與同素異形體差在哪？','同位素：質子數同、中子數異；同素異形體：同元素、結構不同'],['水在幾°C 密度最大？','4°C，約 1 g/cm³'],['CO₂ 三相點為何不能在常壓有液態？','三相點壓力 5.2 atm 高於 1 atm，所以常壓下直接昇華'],['水的淨化五步驟？','沉澱、凝聚、過濾（除臭）、曝氣、消毒'],['暫時硬水如何軟化？','煮沸'],['逆滲透需要什麼條件？','外加壓力大於滲透壓，且使用半透膜']];let qi=0;
+function q(){$('#q').textContent=Q[qi][0];$('#an').textContent=''}$('#sh').onclick=()=>$('#an').textContent=Q[qi][1];$('#nx').onclick=()=>{qi=(qi+1)%Q.length;q()};q();
+</script></body></html>
